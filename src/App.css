@@ -1,42 +1,80 @@
+body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 10vw;
+}
+
+.generalinfo:first-of-type {
+  padding-top: 50px;
+}
+
+.generalinfo,
+.education,
+.experience {
+  display: grid;
+  min-width: 50vw;
+  justify-self: center;
+}
+
+.generalinfo > input,
+.education > input,
+.experience > input {
+  height: 30px;
+}
+
+.generalinfo > label,
+.education > label,
+.experience > label {
+  font-size: 20px;
+}
+
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  grid-row: 1/2;
+  width: 100vw;
+  box-shadow: 0px 5px 20px black;
+  background-color: darkcyan;
+}
+
+nav > h1 {
+  font-size: 30px;
+  margin-bottom: 31.5px;
+}
+
+.navbuttons {
+  grid-column: 3/4;
+}
+
+.navbuttons > button {
+  font-size: 17px;
+  transition: font-size 0.1s ease-in-out;
+}
+
+.navbuttons > button:hover {
+  font-size: 18px;
+  cursor: pointer;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  display: grid;
+  grid-template-rows: 5.2vw 1fr;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+input {
+  margin-bottom: 10px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+textarea {
+  font-size: 15px;
+  height: 100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+label {
+  margin-bottom: 5px;
 }

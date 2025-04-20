@@ -10,14 +10,14 @@ import  {useState} from 'react'
 const root = createRoot(document.getElementById('root'))
 
 function Buttons() {
-  const [editOrSubmit, setEditOrSubmit] = useState('Edit')
+  const [editOrSubmit, setEditOrSubmit] = useState('Submit')
 
     function switchEditOrSubmit(e) {
-      if (editOrSubmit === "Submit") {
-        setEditOrSubmit("Edit")
+      if (editOrSubmit === "Edit") {
+        setEditOrSubmit("Submit")
         makeRoot(false)
       } else {
-        setEditOrSubmit("Submit")
+        setEditOrSubmit("Edit")
         makeRoot(true)
       }
     }

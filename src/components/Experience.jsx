@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.css'
+import '../styles/Styles.css'
 
 export function Experience({submitted}) {
     const [company, setCompany] = useState('')

@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import './App.css'
+import '../styles/Styles.css'
+
 
 export function General({submitted}) {
     const [name, setName] = useState('')

@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import './App.css'
+import '../styles/Styles.css'
+
 
 export function Education({submitted}) { 
     const [school, setSchool] = useState('')

@@ -1,10 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import Nav from './nav.jsx'
-import { General } from './General.jsx'
-import { Education } from './Education.jsx'
-import { Experience } from './Experience.jsx'
+import Nav from './components/Nav.jsx'
+import { General } from './components/General.jsx'
+import { Education } from './components/Education.jsx'
+import { Experience } from './components/Experience.jsx'
 import  {useState} from 'react'
 
 const root = createRoot(document.getElementById('root'))

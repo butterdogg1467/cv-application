@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import './App.css'
+import '../styles/Styles.css'
 
 export default function Nav() {
     return (

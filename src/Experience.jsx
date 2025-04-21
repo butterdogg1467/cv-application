@@ -5,7 +5,9 @@ export function Experience({submitted}) {
     const [company, setCompany] = useState('')
     const [postitle, setPosTitle] = useState('')
     const [responsibilities, setResponsibilities] = useState('')
-    const [dateofeemploy, setDateOfEmploy] = useState('')
+    const [startOfEmploy, setStartOfEmploy] = useState('')
+    const [endOfEmploy, setEndOfEmploy] = useState('')
+    const [stillEmployed, setStillEmployed] = useState(false)
 
     function handleChange(e) {
         if (e.target.name === 'compname') {
@@ -14,8 +16,20 @@ export function Experience({submitted}) {
             setPosTitle(e.target.value)
         } else if (e.target.name === 'responsibilities') {
             setResponsibilities(e.target.value)
+        } else if (e.target.name === 'startofeemploy') {
+            setStartOfEmploy(e.target.value)
         } else {
-            setDateOfEmploy(e.target.value)
+            setEndOfEmploy(e.target.value)
+        }
+    }
+
+    function handleClick() {
+        if (!stillEmployed) {
+            setStillEmployed(true)
+            setEndOfEmploy("Currently Employed at Company")
+        } else {
+            setStillEmployed(false)
+            setEndOfEmploy("")
         }
     }
 
@@ -34,8 +48,17 @@ export function Experience({submitted}) {
                     <label htmlFor="responsibilities">Job Responsibilities: </label>
                     <input type="text" name="responsibilities" id="responsibilities" value={responsibilities} onChange={handleChange}/>
     
-                    <label htmlFor="dateofeemploy">Date of Employement: </label>
-                    <input type="date" name="dateofeemploy" id="dateofeemploy" value={dateofeemploy} onChange={handleChange}/>
+                    <label htmlFor="startofeemploy">Start Date of Employement: </label>
+                    <input type="date" name="startofeemploy" id="startofeemploy" value={startOfEmploy} onChange={handleChange}/>
+
+                    <label htmlFor="endofeemploy">End Date of Employement: </label>
+                    <input type="date" name="endofeemploy" id="endofeemploy" value={endOfEmploy} onChange={handleChange} disabled={stillEmployed}/>
+
+                    <div id='stillemployeddiv'>
+                        <label htmlFor="stillemployed">Still Employed at Company: </label>
+                        <input type="checkbox" onClick={handleClick} checked={stillEmployed}/>
+                    </div>  
+
                 </div>
             </>
         )
@@ -53,7 +76,9 @@ export function Experience({submitted}) {
 
                     <h3>Job Responsibilities: {responsibilities}</h3>
 
-                    <h3>Date of Employement: {dateofeemploy}</h3>
+                    <h3>Start Date of Employement: {startOfEmploy}</h3>
+
+                    <h3>End Date of Employement: {endOfEmploy}</h3>
                 </div>
             </>
         )

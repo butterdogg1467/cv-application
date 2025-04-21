@@ -19,9 +19,13 @@ body {
   justify-self: center;
 }
 
-.generalinfo > input,
-.education > input,
-.experience > input {
+.generalinfo > input[type=text],
+.education > input[type=text],
+.experience > input[type=text],
+.education > input[type=date],
+.experience > input[type=date],
+.generalinfo > input[type=tel],
+.generalinfo > input[type=email] {
   height: 30px;
 }
 
@@ -30,7 +34,6 @@ body {
 .experience > label {
   font-size: 20px;
 }
-
 
 nav {
   display: flex;
@@ -66,8 +69,15 @@ nav > h1 {
   grid-template-rows: 5.2vw 1fr;
 }
 
-input {
+input[type=text],
+input[type=date],
+input[type=tel],
+input[type=email] {
   margin-bottom: 10px;
+}
+
+input[type=checkbox] {
+  width: fit-content;
 }
 
 textarea {
@@ -77,4 +87,11 @@ textarea {
 
 label {
   margin-bottom: 5px;
+}
+
+#stillstudyingdiv,
+#stillemployeddiv {
+  display: flex;
+  justify-content: start;
+  padding-top: 10px;
 }
